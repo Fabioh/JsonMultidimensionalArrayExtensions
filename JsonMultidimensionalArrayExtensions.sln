@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D9D8370E-E8B3-4CD6-AA12-A81B91BFA98B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonMultidimensionalArrayExtensions", "src\JsonMultidimensionalArrayExtensions\JsonMultidimensionalArrayExtensions.csproj", "{30FF65F1-D360-4130-A1CE-78A91152B4BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{8146DB38-5D3C-488B-B790-40FAA73D0DBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonmultidimensionalArrayExtesnsions.Tests", "tests\JsonmultidimensionalArrayExtesnsions.Tests\JsonmultidimensionalArrayExtesnsions.Tests.csproj", "{54DC5E72-0C2E-41B5-8F85-C77B0B8D1364}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30FF65F1-D360-4130-A1CE-78A91152B4BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30FF65F1-D360-4130-A1CE-78A91152B4BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30FF65F1-D360-4130-A1CE-78A91152B4BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30FF65F1-D360-4130-A1CE-78A91152B4BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54DC5E72-0C2E-41B5-8F85-C77B0B8D1364}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54DC5E72-0C2E-41B5-8F85-C77B0B8D1364}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54DC5E72-0C2E-41B5-8F85-C77B0B8D1364}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54DC5E72-0C2E-41B5-8F85-C77B0B8D1364}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{30FF65F1-D360-4130-A1CE-78A91152B4BB} = {D9D8370E-E8B3-4CD6-AA12-A81B91BFA98B}
+		{54DC5E72-0C2E-41B5-8F85-C77B0B8D1364} = {8146DB38-5D3C-488B-B790-40FAA73D0DBC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {12F5DB58-F902-4D01-95E6-F54B4DF39E3A}
+	EndGlobalSection
+EndGlobal

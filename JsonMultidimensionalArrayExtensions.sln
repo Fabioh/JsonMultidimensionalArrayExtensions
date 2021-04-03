@@ -5,11 +5,22 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D9D8370E-E8B3-4CD6-AA12-A81B91BFA98B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonMultidimensionalArrayExtensions", "src\JsonMultidimensionalArrayExtensions\JsonMultidimensionalArrayExtensions.csproj", "{30FF65F1-D360-4130-A1CE-78A91152B4BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonMultidimensionalArrayExtensions", "src\JsonMultidimensionalArrayExtensions\JsonMultidimensionalArrayExtensions.csproj", "{30FF65F1-D360-4130-A1CE-78A91152B4BB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{8146DB38-5D3C-488B-B790-40FAA73D0DBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonmultidimensionalArrayExtesnsions.Tests", "tests\JsonmultidimensionalArrayExtesnsions.Tests\JsonmultidimensionalArrayExtesnsions.Tests.csproj", "{54DC5E72-0C2E-41B5-8F85-C77B0B8D1364}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonmultidimensionalArrayExtesnsions.Tests", "tests\JsonmultidimensionalArrayExtesnsions.Tests\JsonmultidimensionalArrayExtesnsions.Tests.csproj", "{54DC5E72-0C2E-41B5-8F85-C77B0B8D1364}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{7680583C-47EF-4498-9DF3-B3E3445A7B72}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Build", "build\Build.csproj", "{C9BCCCAE-1B02-4C98-8306-E2DA61D61A02}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{87045993-FBEE-4056-BCA4-A17168BD2D90}"
+	ProjectSection(SolutionItems) = preProject
+		build.ps1 = build.ps1
+		build.sh = build.sh
+		global.json = global.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +36,10 @@ Global
 		{54DC5E72-0C2E-41B5-8F85-C77B0B8D1364}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54DC5E72-0C2E-41B5-8F85-C77B0B8D1364}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54DC5E72-0C2E-41B5-8F85-C77B0B8D1364}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9BCCCAE-1B02-4C98-8306-E2DA61D61A02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9BCCCAE-1B02-4C98-8306-E2DA61D61A02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9BCCCAE-1B02-4C98-8306-E2DA61D61A02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9BCCCAE-1B02-4C98-8306-E2DA61D61A02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +47,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{30FF65F1-D360-4130-A1CE-78A91152B4BB} = {D9D8370E-E8B3-4CD6-AA12-A81B91BFA98B}
 		{54DC5E72-0C2E-41B5-8F85-C77B0B8D1364} = {8146DB38-5D3C-488B-B790-40FAA73D0DBC}
+		{C9BCCCAE-1B02-4C98-8306-E2DA61D61A02} = {7680583C-47EF-4498-9DF3-B3E3445A7B72}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {12F5DB58-F902-4D01-95E6-F54B4DF39E3A}

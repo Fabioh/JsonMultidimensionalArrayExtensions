@@ -45,16 +45,16 @@ namespace JsonMultidimensionalArrayExtensions
 
                 if (innerElements.Count != qttOfElementsInFirstLine)
                 {
-                    throw new JsonException("the matrix must have teh same qauantity of elements in each line");
+                    throw new JsonException("the matrix must have teh same quantity of elements in each line");
                 }
 
                 elements.Add(innerElements);
 
                 reader.Read();
-                if (reader.TokenType != JsonTokenType.StartArray && reader.TokenType != JsonTokenType.EndArray)
-                {
-                    throw new JsonException();
-                }
+                //if (reader.TokenType != JsonTokenType.StartArray && reader.TokenType != JsonTokenType.EndArray)
+                //{
+                //    throw new JsonException();
+                //}
                 innerElements = new List<T>();
                 reader.Read();
             }

@@ -22,8 +22,8 @@ jobs:
               run: dotnet build tests/JsonmultidimensionalArrayExtesnsions.Tests/JsonmultidimensionalArrayExtesnsions.Tests.csproj --configuration Release
 
             - name: Test
-              # run: dotnet test ./tests/JsonmultidimensionalArrayExtesnsions.Tests/JsonmultidimensionalArrayExtesnsions.Tests.csproj.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput='./../../coverage/' /p:Exclude=\"[*SampleApp*]*\"
-              run: dotnet test ./tests/JsonmultidimensionalArrayExtesnsions.Tests/JsonmultidimensionalArrayExtesnsions.Tests.csproj.csproj /p:CollectCoverage=true
+              # run: dotnet test ./tests/JsonmultidimensionalArrayExtesnsions.Tests/JsonmultidimensionalArrayExtesnsions.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput='./../../coverage/' /p:Exclude=\"[*SampleApp*]*\"
+              run: dotnet test ./tests/JsonmultidimensionalArrayExtesnsions.Tests/JsonmultidimensionalArrayExtesnsions.Tests.csproj /p:CollectCoverage=true
 
             # - name: Upload coverage to Codecov
             #   uses: codecov/codecov-action@v1.2.1

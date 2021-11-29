@@ -32,6 +32,7 @@ jobs:
               run: dotnet build tests/JsonmultidimensionalArrayExtesnsions.Tests/JsonmultidimensionalArrayExtesnsions.Tests.csproj --configuration Release
 
             - name: Unit Test with coverage
+              if: ${{ matrix.os == 'ubuntu-20.04' }}
               run: dotnet test ./tests/JsonmultidimensionalArrayExtesnsions.Tests/JsonmultidimensionalArrayExtesnsions.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput='./../../coverage/'
               
 

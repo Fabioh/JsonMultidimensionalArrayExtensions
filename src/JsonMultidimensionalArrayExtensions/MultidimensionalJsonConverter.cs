@@ -80,13 +80,7 @@ namespace JsonMultidimensionalArrayExtensions
                 writer.WriteStartArray();
                 for (int j = 0; j < value.GetLength(1); ++j)
                 {
-                    if (typeof(T) == typeof(int))
-                    {
-                        writer.WriteNumberValue(
-                            value[i, j]
-                        );
-                    }
-                    
+                    JsonSerializer.Serialize(writer, value[i, j], options);
                 }
                 writer.WriteEndArray();
             }

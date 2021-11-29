@@ -74,7 +74,17 @@ namespace JsonMultidimensionalArrayExtensions
 
         public override void Write(Utf8JsonWriter writer, T[,] value, JsonSerializerOptions options)
         {
-            throw new NotImplementedException();
+            writer.WriteStartArray();
+            for (int i = 0; i < value.GetLength(0); ++i)
+            {
+                writer.WriteStartArray();
+                for (int j = 0; j < value.GetLength(1); ++j)
+                {
+                    JsonSerializer.Serialize(writer, value[i, j], options);
+                }
+                writer.WriteEndArray();
+            }
+            writer.WriteEndArray();
         }
     }
 }

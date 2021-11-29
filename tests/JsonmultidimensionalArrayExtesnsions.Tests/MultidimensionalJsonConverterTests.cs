@@ -1,8 +1,8 @@
 ﻿using FluentAssertions;
+using FluentAssertions.Json;
 using JsonMultidimensionalArrayExtensions;
+using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Text.Json;
 using Xunit;
 
@@ -105,5 +105,26 @@ namespace JsonmultidimensionalArrayExtesnsions.Tests
         //    act.Should()
         //        .Throw<JsonException>();
         //}
+
+        [Fact]
+        public void ShouldDeserializeAJsonTextCorrectly()
+        {
+
+            var serializeOptions = new JsonSerializerOptions
+            {
+                WriteIndented = true,
+                Converters =
+                {
+                    new MultidimensionalJsonConverter<double>()
+                }
+            };
+
+            var jsonString = "[[1,2,3],[1,2,3]]";
+            var v = JsonSerializer.Serialize<double[,]>(new double[,] { { 1, 2, 3 }, { 1, 2, 3 } }, serializeOptions);
+
+            var retJson = JToken.Parse(v);
+
+            retJson.Should().BeEquivalentTo(JToken.Parse(jsonString));
+        }
     }
 }

@@ -45,7 +45,7 @@ namespace JsonMultidimensionalArrayExtensions
 
                 if (innerElements.Count != qttOfElementsInFirstLine)
                 {
-                    throw new JsonException("the matrix must have teh same qauantity of elements in each line");
+                    throw new JsonException("the matrix must have the same quantity of elements in each line");
                 }
 
                 elements.Add(innerElements);

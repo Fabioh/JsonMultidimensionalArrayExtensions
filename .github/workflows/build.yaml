@@ -12,11 +12,20 @@ jobs:
         env:
             DOTNET_CLI_TELEMETRY_OPTOUT: 0
         name: Build
-        runs-on: ubuntu-latest
-
+        runs-on: {{ matrix.os }}
+        strategy:
+          matrix:
+            os: [macos-latest, windows-latest, ubuntu-18.04, ubuntu-20.04]
+            # dotnetVersion: [3.1.x, 5.0.x]
+            dotnetVersion: [3.1.x]
         steps:
             - name: Checkout code
               uses: actions/checkout@v2
+
+          - name: Setup .NET Core
+            uses: actions/setup-dotnet@v1
+            with:
+              dotnet-version: {{ matrix.dotnetVersion }}
 
             - name: Build
               run: dotnet build tests/JsonmultidimensionalArrayExtesnsions.Tests/JsonmultidimensionalArrayExtesnsions.Tests.csproj --configuration Release

@@ -36,6 +36,7 @@ jobs:
               if: ${{ matrix.os == 'ubuntu-20.04' }}
 
             - name: Unit Test
+              if: ${{ matrix.os != 'ubuntu-20.04' }}
               run: dotnet test ./tests/JsonmultidimensionalArrayExtesnsions.Tests/JsonmultidimensionalArrayExtesnsions.Tests.csproj
 
             # - name: Upload coverage to Codecov

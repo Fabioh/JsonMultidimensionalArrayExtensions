@@ -22,10 +22,10 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v2
 
-          - name: Setup .NET Core
-            uses: actions/setup-dotnet@v1
-            with:
-              dotnet-version: {{ matrix.dotnetVersion }}
+            - name: Setup .NET Core
+              uses: actions/setup-dotnet@v1
+              with:
+                dotnet-version: {{ matrix.dotnetVersion }}
 
             - name: Build
               run: dotnet build tests/JsonmultidimensionalArrayExtesnsions.Tests/JsonmultidimensionalArrayExtesnsions.Tests.csproj --configuration Release

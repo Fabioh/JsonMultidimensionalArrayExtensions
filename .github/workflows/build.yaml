@@ -33,7 +33,7 @@ jobs:
 
             - name: Unit Test with coverage
               run: dotnet test ./tests/JsonmultidimensionalArrayExtesnsions.Tests/JsonmultidimensionalArrayExtesnsions.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput='./../../coverage/'
-              if: ${{ matrix.os == 'ubuntu-20.04' }}
+              
 
             - name: Unit Test
               if: ${{ matrix.os != 'ubuntu-20.04' }}
@@ -50,3 +50,14 @@ jobs:
             #       gcov_path_exclude: 'samples/**/*'
             #       path_to_write_report: ./coverage/codecov_report.txt
             #       verbose: true
+            - name: Upload coverage to Codecov
+              if: ${{ matrix.os == 'ubuntu-20.04' }}
+              uses: codecov/codecov-action@v2
+              with:
+                token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+                directory: ./coverage/
+                flags: unittests # optional
+                name: codecov-umbrella # optional
+                fail_ci_if_error: true # optional (default = false)
+                path_to_write_report: ./coverage/codecov_report.txt
+                verbose: true # optional (default = false)

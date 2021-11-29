@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace JsonMultidimensionalArrayExtensions
 {
-    public class MultidimensionalJsonConverter<T> : JsonConverter<T[,]>
+    public class MultidimensionalJsonConverter<T> : JsonConverter<T[,]> where T
     {
         public override T[,] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
@@ -74,7 +74,23 @@ namespace JsonMultidimensionalArrayExtensions
 
         public override void Write(Utf8JsonWriter writer, T[,] value, JsonSerializerOptions options)
         {
-            throw new NotImplementedException();
+            writer.WriteStartArray();
+            for (int i = 0; i < value.GetLength(0); ++i)
+            {
+                writer.WriteStartArray();
+                for (int j = 0; j < value.GetLength(1); ++j)
+                {
+                    if (typeof(T) == typeof(int))
+                    {
+                        writer.WriteNumberValue(
+                            value[i, j]
+                        );
+                    }
+                    
+                }
+                writer.WriteEndArray();
+            }
+            writer.WriteEndArray();
         }
     }
 }

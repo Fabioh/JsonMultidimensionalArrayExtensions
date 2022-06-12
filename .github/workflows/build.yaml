@@ -38,7 +38,7 @@ jobs:
 
             - name: Unit Test with summary 
               if: ${{ matrix.os != 'ubuntu-20.04' }}
-              run: dotnet test ./tests/JsonmultidimensionalArrayExtesnsions.Tests/JsonmultidimensionalArrayExtesnsions.Tests.csproj --logger "junit;LogFilePath='./../../results/tests.xml'"
+              run: dotnet test ./tests/JsonmultidimensionalArrayExtesnsions.Tests/JsonmultidimensionalArrayExtesnsions.Tests.csproj --logger "junit;LogFilePath='../../results/tests.xml'"
 
             # - name: Upload coverage to Codecov
             #   uses: codecov/codecov-action@v1.2.1

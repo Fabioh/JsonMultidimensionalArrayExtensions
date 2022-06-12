@@ -62,4 +62,9 @@ jobs:
                 fail_ci_if_error: true # optional (default = false)
                 path_to_write_report: ./coverage/codecov_report.txt
                 verbose: true # optional (default = false)
-                
+ 
+            - name: Create test summary
+              uses: test-summary/action@dist
+              with:
+                 paths: results/**/*.xml
+              if: always()   

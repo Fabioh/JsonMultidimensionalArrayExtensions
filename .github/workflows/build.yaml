@@ -36,9 +36,9 @@ jobs:
               run: dotnet test ./tests/JsonmultidimensionalArrayExtesnsions.Tests/JsonmultidimensionalArrayExtesnsions.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput='./../../coverage/'
               
 
-            - name: Unit Test
+            - name: Unit Test with summary 
               if: ${{ matrix.os != 'ubuntu-20.04' }}
-              run: dotnet test ./tests/JsonmultidimensionalArrayExtesnsions.Tests/JsonmultidimensionalArrayExtesnsions.Tests.csproj
+              run: dotnet test --logger "junit;LogFilePath=./../../results/tests.xml"
 
             # - name: Upload coverage to Codecov
             #   uses: codecov/codecov-action@v1.2.1
@@ -62,4 +62,9 @@ jobs:
                 fail_ci_if_error: true # optional (default = false)
                 path_to_write_report: ./coverage/codecov_report.txt
                 verbose: true # optional (default = false)
-                
+ 
+            - name: Create test summary
+              uses: test-summary/action@dist
+              with:
+                 paths: results/**/*.xml
+              if: ${{ matrix.os != 'ubuntu-20.04' }}

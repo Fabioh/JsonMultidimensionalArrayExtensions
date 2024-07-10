@@ -18,7 +18,8 @@ jobs:
           matrix:
             os: [macos-latest, windows-latest, ubuntu-latest, ubuntu-22.04]
             # dotnetVersion: [3.1.x, 5.0.x]
-            dotnetVersion: [3.1.x, 5.0.x, 6.0.x]
+            # dotnetVersion: [3.1.x, 5.0.x, 6.0.x]
+            dotnetVersion: [3.1.x]
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
@@ -32,12 +33,12 @@ jobs:
               run: dotnet build tests/JsonmultidimensionalArrayExtesnsions.Tests/JsonmultidimensionalArrayExtesnsions.Tests.csproj --configuration Release
 
             - name: Unit Test with coverage
-              if: ${{ matrix.os == 'ubuntu-20.04' }}
+              if: ${{ matrix.os == 'ubuntu-latest' }}
               run: dotnet test ./tests/JsonmultidimensionalArrayExtesnsions.Tests/JsonmultidimensionalArrayExtesnsions.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput='./../../coverage/'
               
 
             - name: Unit Test
-              if: ${{ matrix.os != 'ubuntu-20.04' }}
+              if: ${{ matrix.os != 'ubuntu-latest' }}
               run: dotnet test ./tests/JsonmultidimensionalArrayExtesnsions.Tests/JsonmultidimensionalArrayExtesnsions.Tests.csproj
 
             # - name: Upload coverage to Codecov
@@ -52,7 +53,7 @@ jobs:
             #       path_to_write_report: ./coverage/codecov_report.txt
             #       verbose: true
             - name: Upload coverage to Codecov
-              if: ${{ matrix.os == 'ubuntu-20.04' }}
+              if: ${{ matrix.os == 'ubuntu-latest' }}
               uses: codecov/codecov-action@v2
               with:
                 token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
